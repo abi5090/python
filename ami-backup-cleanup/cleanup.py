@@ -2,7 +2,7 @@ import boto3
 import time
 import datetime
 
-accountId = '<enter your aws account number here>'
+accountId = 'AWS_ACCOUNT_NUMBER'
 ec2c = boto3.client('ec2')
 
 amis = ec2c.describe_images(Owners=[accountId])
