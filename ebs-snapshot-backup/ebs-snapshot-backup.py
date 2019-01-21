@@ -1,5 +1,4 @@
 import boto3
-import time
 import datetime
 
 def notify(topic,ilist,slist,session):
@@ -7,14 +6,14 @@ def notify(topic,ilist,slist,session):
   if not slist:
      msg = "No snapshots identified to remove"
   else:
-     msg = f"""
+     msg = """
      Instances identified: {ilist!r}
      Snapshots taken: {slist!r}
      For details, please check cloudwatch logs
      """
   snsc = session.client('sns')
   try:
-     resp = snsc.publish(TopicArn=topic,Subject=sub,Message=msg)
+     snsc.publish(TopicArn=topic,Subject=sub,Message=msg)
   except Exception as error:
      print ("Can't publish to topic " + topic + " ERROR: " + str(error))
      exit()
@@ -33,7 +32,7 @@ def lambda_handler(event,context):
   sretention = 90   # Days to retain the snapshots for
   slist = []
   ilist = []
-  regions = ['REGION_1','REGION_2,'REGION_3'] ## Replace/add/remove regions where the instances are for backup
+  regions = ['REGION_1','REGION_2','REGION_3'] ## Replace/add/remove regions where the instances are for backup
 
   for rg in regions:
      ec2c = session.client('ec2',region_name=rg )
@@ -77,5 +76,6 @@ def lambda_handler(event,context):
                  continue
               print ("Snapshot " + snap['SnapshotId'] + " taken for " + v['Ebs']['VolumeId'])
               slist.append(snap['SnapshotId'])
+  
   notify(event["topic"],ilist,slist,session)
   print("Execution complete")
