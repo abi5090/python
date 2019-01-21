@@ -1,4 +1,4 @@
-# Python [![Codacy Badge](https://api.codacy.com/project/badge/Grade/1c3948416b06424aa4d139ccd0401c6d)](https://www.codacy.com/app/abi5090/python?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=abiydv/python&amp;utm_campaign=Badge_Grade)
+# Python
 Python code snippets for some mundane tasks
 
 ## What is where?
