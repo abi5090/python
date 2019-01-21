@@ -76,6 +76,6 @@ def lambda_handler(event,context):
                  continue
               print ("Snapshot " + snap['SnapshotId'] + " taken for " + v['Ebs']['VolumeId'])
               slist.append(snap['SnapshotId'])
-  
+
   notify(event["topic"],ilist,slist,session)
   print("Execution complete")
