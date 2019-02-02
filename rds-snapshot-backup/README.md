@@ -1,5 +1,9 @@
 # RDS backup scipt
 
+![py](https://github.com/abiydv/ref-docs/blob/master/images/logos/python_small.png)
+![cli](https://github.com/abiydv/ref-docs/blob/master/images/logos/aws-cli_small.png)
+![rds](https://github.com/abiydv/ref-docs/blob/master/images/logos/aws-rds_small.png)
+
 Automate the manual snapshot for RDS using Cloudwatch Event rules + Lambda
 
 Script accepts input as json - DB Name, and initiates a snapshot.
