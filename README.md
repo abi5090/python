@@ -1,5 +1,7 @@
 # Python
-Python code snippets for some mundane tasks
+![py](https://github.com/abiydv/ref-docs/blob/master/images/logos/python_small.png)
+
+Python code snippets for some mundane AWS administrative tasks
 
 ## What is where?
 
