@@ -22,7 +22,7 @@ for a in amis['Images']:
            delaft = ''
    else:
       continue
-       
+
    if delaft and ( delaft < delt ):
       print ("AMI can be removed: ",a['ImageId'])
       delamis.append(a['ImageId'])
