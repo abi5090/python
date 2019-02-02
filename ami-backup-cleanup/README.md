@@ -1,15 +1,21 @@
 # AWS EC2 AMI Backup and Cleanup scripts
 
+![py](https://github.com/abiydv/ref-docs/blob/master/images/logos/python_small.png)
+![cli](https://github.com/abiydv/ref-docs/blob/master/images/logos/aws-cli_small.png)
+![ec2](https://github.com/abiydv/ref-docs/blob/master/images/logos/aws-ec2_small.png)
+![ami](https://github.com/abiydv/ref-docs/blob/master/images/logos/aws-ami_small.png)
+
 Use these scripts to schedule automated AMI backups of your EC2 instances. Description of what each script does, follows.
 
-**Backup.py** - It will create an AMI for all the instances in your account which have a tag "Backup". The AMI created is named as "AUTO-\<InstanceName\>\-\<Date\>".
+### Backup.py
+It will create an AMI for all the instances in your account which have a tag "Backup". The AMI created is named as "AUTO-\<InstanceName\>\-\<Date\>".
 
 AMI and Snapshots created will have following tags -  
  - Name\: AUTO-\<InstanceName\>\-\<Date\>
  - Delete After\: Today + 7 days
 
-**Cleanup.py** - It will remove old AMI/Snapshots created by Backup.py
-             If today \> "Delete After" tag on the AMI, it is deregistered and attached snapshots are removed.
+### Cleanup.py
+It will remove old AMI/Snapshots created by Backup.py. If today \> "Delete After" tag on the AMI, it is deregistered and attached snapshots are removed.
 
 It can be either scheduled from a local VM/EC2 instance/Jenkins or even Lambda. 
 
