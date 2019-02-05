@@ -1,4 +1,6 @@
 # Python
+[![CodeFactor](https://www.codefactor.io/repository/github/abiydv/python/badge/master)](https://www.codefactor.io/repository/github/abiydv/python/overview/master)
+
 ![py](https://github.com/abiydv/ref-docs/blob/master/images/logos/python_small.png)
 
 Python code snippets for some mundane AWS administrative tasks
